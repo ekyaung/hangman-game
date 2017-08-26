@@ -4,3 +4,12 @@ body{
 		line-height: 34px;
 		color:black;
 		background: url(http://img1.picturescafe.com/pc/016/001.gif);
+	}
+
+#reset{
+	margin-left: 20px;
+	font-size: 25px;
+	color:black;
+	border-style:solid;
+	width:100px;
+}
