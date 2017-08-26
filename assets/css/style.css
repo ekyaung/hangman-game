@@ -15,6 +15,16 @@ body{
 	background-color:magenta;
 }
 
+#enter{
+	margin-left: 20px;
+	font-size: 25px;
+	color:black;
+	border-style:solid;
+	width:100px;
+	background-color:magenta;
+}
+
+
 .jumbotron{
 	background: #A05F5F;
 	

@@ -9,7 +9,7 @@
 
 	<!-- the link to reset.css -->
 	<!-- <link rel="stylesheet" type="reset/css" href="reset.css"> -->
-	<link rel="javascript" href="assets/javascript/game.js">
+	<link rel="java" href="assets/javascript/game.js">
 
 	
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -24,14 +24,9 @@
 	<div class="jumbotron">
 	<h1 class="text-center">Hello Kitty Hangman!</h1></div>
 
-	
-	
-
-	
-
 	<div><h2> Guess a word </h2></div>
 	<div><input id="letter" type="text"></div>
-	<div><input type="button" value="enter" onClick="Letter()"></div>
+	<div><input id="enter" type="button" value="enter" onClick="Letter()"></div>
 	<div id="display"></div>
 	<div id="buttons"></div>
 	<div><button id="reset">Reset</button></div>
@@ -40,4 +35,51 @@
 	<div><<p id = "Guesses"></p></div>
 	
 </body>
+
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	<script type="text/javascript">
+
+
+	var answerKey = ["kerropi", "batz", "hello kitty"]
+
+	var batz = ["b","a","t","z"];
+	var answer = answerKey[Math.floor(Math.random() * answerKey.length)];
+
+	var a;
+	var count = 0;
+	var answerArray = [];
+
+	function startUp(){
+		var i = 0;
+			for (i = 0; answer.length; i++);
+			{
+				answerArray[i] = " _ ";
+			}
+		a = answer.join("  ");
+		document.getElementById("answer").innerHTML = a;
+	}
+
+	function Letter(){
+		var letter = document.getElementById("letter").value;
+		if (letter.length > 0){
+			for (var i = 0; i < answerKey.length; i++){
+				if (answerKey[i] === letter){
+					answerArray[i] = letter;
+				}
+			}
+		}
+
+	count++;
+	document.getElementById("counter").innerHTML = "# of clicks: " + count;
+	document.getElementById("answer").innerHTML = answerArray.join("  ");
+	
+	if (count < 12){
+		document.getElementById("stat").innerHTML = "Game over - - - Try again!"
+	}
+	
+	}
+	 	
+	</script>
 </html>
